@@ -1,11 +1,4 @@
 
-const devMode = false;
-
-if(devMode){
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-    document.body.style.overflow = "auto";
-}
 /* ==================================
    ELEMENTS
 ================================== */
