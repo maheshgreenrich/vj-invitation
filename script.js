@@ -1,5 +1,5 @@
 
-const devMode = true;
+const devMode = false;
 
 if(devMode){
     document.getElementById("intro").style.display = "none";
