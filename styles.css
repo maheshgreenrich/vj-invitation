@@ -1,0 +1,845 @@
+/* =========================
+   GLOBAL
+========================= */
+#intro{
+    display:flex;
+}
+
+#main-content{
+    display:none;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f6f1;
+    color:#333;
+    overflow:hidden;
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+#intro{
+    position:fixed;
+    inset:0;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:#a07bca;
+    z-index:9999;
+
+    transition:1s;
+}
+
+/* Envelope Container */
+
+.envelope-container{
+    text-align:center;
+}
+
+/* Envelope */
+
+.envelope{
+    width: 440px;
+    height:300px;
+    position:relative;
+    cursor:pointer;
+
+    transition:.8s ease;
+
+    animation:floatEnvelope 4s ease-in-out infinite;
+}
+
+/* Shadow */
+
+.envelope::after{
+    content:"";
+
+    position:absolute;
+    bottom:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:440px;
+    height:40px;
+
+    background:rgba(0,0,0,.15);
+
+    border-radius:50%;
+
+    filter:blur(15px);
+}
+
+/* Main Envelope */
+
+.envelope-body{
+    width:100%;
+    height:100%;
+
+    background-image:url("envelope1.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border-radius:6px;
+    padding: 0;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25),
+    inset 0 0 10px rgba(255,255,255,.3);
+}
+
+/* Top Flap */
+
+.envelope-top{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:10%;
+    height:320px;
+    padding: 0;
+
+    background:linear-gradient(
+    135deg,
+    #c4ceb7,
+    #aeb89f
+    );
+
+    clip-path:polygon(
+    0 0,
+    100% 0,
+    50% 100%
+    );
+
+    transform-origin:top;
+    transition:1s;
+    z-index:5;
+}
+
+/* Gold Seal */
+
+.seal{
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle at top,
+    #ffd65e,
+    #d4a017
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:34px;
+    font-family:'Cinzel',serif;
+    font-weight:600;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.3),
+    inset 0 4px 8px rgba(255,255,255,.5);
+
+    z-index:10;
+}
+
+/* Hover */
+
+.envelope:hover{
+    transform:translateY(-10px);
+}
+
+.tap-text{
+    margin-top:60px;
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    letter-spacing:2px;
+
+    font-family:'montserrat',serif;
+}
+
+/* Floating Animation */
+
+@keyframes floatEnvelope{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+#main-content{
+    display:block;
+    background
+    
+}
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero{
+    min-height:100vh;
+    padding:100px 20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    background:url("bg2.png");
+    background-size:cover;
+    background-position:top;
+}
+
+.top-layer{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height: 735px;
+    z-index:100;
+
+    pointer-events:none;
+}
+.hero-content{
+
+    max-width:1200px;
+
+    padding:20px;
+}
+
+.hero h4{
+
+    letter-spacing:3px;
+
+    color:#762edc;
+
+    margin: 300px 0 0 20px;
+
+}
+
+.hero h1{
+
+    font-size:85PX;
+    color: #5e17eb;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#ff0000;
+}
+
+.quote{
+
+    font-size:1.2rem;
+    color: #333;
+
+    line-height:1.8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    background:#5e17eb;
+
+    color:rgb(255, 255, 255);
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(141, 55, 212, 0.4);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+
+    padding:100px 20px;
+    background-color: #d7c7f9;
+
+    text-align:center;
+}
+
+.hero-image{ 
+    width:200%; 
+    max-width:500px; 
+    border-radius:20px; 
+     }
+
+h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:40px;
+
+    font-family:'Cinzel',serif;
+
+    color:#5e17eb;
+}
+.date-card{
+
+    font-size:22px;
+
+    margin:15px 0 0 15px;
+
+    font-family:'Cinzel',serif;
+
+    color:#5e17eb;
+}
+p{
+
+    font-size:20px;
+
+    margin-bottom:10px 0 0 10px;
+
+    font-family:'Cinzel',serif;
+
+    color:#323232;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.date-card,
+.event-card,
+.venue-card{
+
+    max-width:500px;
+
+    margin:auto;
+
+    background:#ffffff;
+
+    border: solid 2px;
+    border-color: #762edc;
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:10px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.1);
+}
+
+.event-card{
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+}
+
+.person{
+
+    background:white;
+
+    padding:30px;
+
+    width:320px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.heart{
+
+    font-size:60px;
+
+    color:#d4af37;
+
+    align-self:center;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.countdown{
+    margin-top: 30px;
+}
+.timer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.timer div{
+
+    width:120px;
+
+    background:white;
+
+    padding:25px;
+
+    border: solid 2px;
+    border-color: #762edc;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.1);
+}
+
+.timer span{
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+    color:#83239e;
+}
+.days{
+    font-size: 124px;
+}
+
+
+
+
+/* =========================
+   EVENTS SECTION
+========================= */
+
+.events{
+    padding:120px 20px;
+    background:#eae1ff;
+    text-align:center;
+}
+
+.events h2{
+    font-size:3rem;
+    color:#762edc;
+    font-family:'Cinzel', serif;
+    margin-bottom:60px;
+}
+
+/* =========================
+   EVENT CARD COMMON
+========================= */
+
+.event-card1,
+.event-card2{
+
+    max-width:800px;
+    height:400px;
+
+    margin:40px auto;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    display:flex;
+    align-items:flex-end;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+    transition:.4s ease;
+}
+
+/* Background Images */
+
+.event-card1{
+    background-image:url("reception1.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.event-card2{
+    background-image:url("marriage1.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* Hover */
+
+.event-card1:hover,
+.event-card2:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 25px 60px rgba(118,46,220,.25);
+}
+
+/* =========================
+   WHITE BOTTOM BOX
+========================= */
+
+.event-info{
+
+    width:100%;
+
+    background:#ffffff;
+
+    padding:25px 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+/* Left Side */
+
+.event-left h3{
+
+    font-size:34px;
+
+    color:#762edc;
+
+    font-family:'Cinzel', serif;
+
+    margin:0;
+}
+
+/* Right Side */
+
+.event-right{
+
+    text-align:right;
+}
+
+.event-right p{
+
+    margin:5px 0;
+
+    font-size:18px;
+
+    color:#444;
+
+    font-weight:500;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .events h2{
+        font-size:2rem;
+    }
+
+    .event-card1,
+    .event-card2{
+        height:320px;
+    }
+
+    .event-info{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:10px;
+    }
+
+    .event-right{
+        text-align:center;
+    }
+
+    .event-left h3{
+        font-size:26px;
+    }
+
+    .event-right p{
+        font-size:16px;
+    }
+
+}
+
+
+/* =========================
+   VENUE SECTION
+========================= */
+
+.venue{
+
+    padding:90px 20px;
+
+    background:url("venue-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+}
+
+.venue::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:#f8f2ff;
+}
+
+.venue h2{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    color:#762edc;
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+
+    font-family:'Cinzel', serif;
+}
+
+.venue-container{
+
+    position:relative;
+    z-index:2;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+}
+
+/* Venue Card */
+
+.venue-card{
+
+    flex:1;
+
+    min-width:320px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid #762edc);
+
+    color:white;
+}
+
+.venue-card h3{
+
+    color:#762edc;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+}
+
+.venue-card p{
+
+    line-height:1.9;
+
+    margin-bottom:15px;
+}
+
+.landmark{
+
+    color:#762edc;
+
+    font-weight:600;
+}
+
+/* Map Card */
+
+.map-card{
+
+    flex:1;
+
+    min-width:350px;
+
+    height:490px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4);
+}
+
+.map-card iframe{
+
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .venue h2{
+        font-size:2rem;
+    }
+
+    .map-card{
+        height:300px;
+    }
+
+}
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#5e17eb;
+
+    color:rgb(171, 171, 171);
+
+    text-align:center;
+
+    padding:80px 20px;
+}
+
+footer h2{
+
+    color:#ffffff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.envelope{
+    width:280px;
+    height:350px;
+}
+
+.seal{
+    width:90px;
+    height:90px;
+    font-size:24px;
+}
+
+.tap-text{
+    font-size:14px;
+}
+
+.timer div{
+    width:90px;
+}
+
+}
+```
