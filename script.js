@@ -1,4 +1,3 @@
-
 /* ==================================
    ELEMENTS
 ================================== */
@@ -14,34 +13,43 @@ const music = document.getElementById("music");
    OPEN INVITATION
 ================================== */
 
-envelope.addEventListener("click", () => {
+if(envelope){
 
-    flap.style.transform = "rotateX(180deg)";
+    envelope.addEventListener("click", () => {
 
-    document.querySelector(".seal").style.opacity = "0";
+        if(flap){
+            flap.style.transform = "rotateX(180deg)";
+        }
 
-    setTimeout(() => {
+        const seal = document.querySelector(".seal");
 
-        intro.style.opacity = "0";
+        if(seal){
+            seal.style.opacity = "0";
+        }
 
         setTimeout(() => {
 
-            intro.style.display = "none";
+            intro.style.opacity = "0";
 
-            mainContent.style.display = "block";
+            setTimeout(() => {
 
-            document.body.style.overflow = "auto";
+                intro.style.display = "none";
 
-            if(music){
-                music.play().catch(() => {});
-            }
+                mainContent.style.display = "block";
 
-        },1000);
+                document.body.style.overflow = "auto";
 
-    },1500);
+                if(music){
+                    music.play().catch(() => {});
+                }
 
-});
+            },1000);
 
+        },1500);
+
+    });
+
+}
 
 
 /* ==================================
@@ -274,38 +282,36 @@ window.addEventListener("load", () => {
 
 
 /* ==================================
-   MUSIC BUTTON (OPTIONAL)
+   MUSIC CONTROL
 ================================== */
 
-const musicButton =
-document.getElementById("music-toggle");
+document.addEventListener("visibilitychange", () => {
 
-if(musicButton){
+    if(!music) return;
 
-    musicButton.addEventListener(
-    "click",
-    () => {
+    if(document.hidden){
 
-        if(music.paused){
+        music.pause();
 
-            music.play();
+    }else{
 
-            musicButton.innerHTML =
-            "🔊";
+        music.play().catch(() => {});
 
-        }else{
+    }
 
-            music.pause();
+});
 
-            musicButton.innerHTML =
-            "🔈";
+window.addEventListener("beforeunload", () => {
 
-        }
+    if(music){
 
-    });
+        music.pause();
 
-}
+        music.currentTime = 0;
 
+    }
+
+});
 
 /* ==================================
    FLOWER PETAL EFFECT

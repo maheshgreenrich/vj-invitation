@@ -1,845 +1,438 @@
-/* =========================
-   GLOBAL
-========================= */
-#intro{
-    display:flex;
-}
-
-#main-content{
-    display:none;
-}
+/* =====================================
+RESET
+===================================== */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#f8f6f1;
-    color:#333;
-    overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:#f8f6f1;
+color:#333;
+overflow-x:hidden;
 }
 
-/* =========================
-   INTRO SCREEN
-========================= */
+/* =====================================
+INTRO SCREEN
+===================================== */
 
 #intro{
-    position:fixed;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-
-    background:#a07bca;
-    z-index:9999;
-
-    transition:1s;
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#a07bca;
+z-index:9999;
 }
-
-/* Envelope Container */
 
 .envelope-container{
-    text-align:center;
+text-align:center;
 }
-
-/* Envelope */
 
 .envelope{
-    width: 440px;
-    height:300px;
-    position:relative;
-    cursor:pointer;
-
-    transition:.8s ease;
-
-    animation:floatEnvelope 4s ease-in-out infinite;
+width:440px;
+height:300px;
+position:relative;
+cursor:pointer;
 }
-
-/* Shadow */
-
-.envelope::after{
-    content:"";
-
-    position:absolute;
-    bottom:30px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:440px;
-    height:40px;
-
-    background:rgba(0,0,0,.15);
-
-    border-radius:50%;
-
-    filter:blur(15px);
-}
-
-/* Main Envelope */
 
 .envelope-body{
-    width:100%;
-    height:100%;
-
-    background-image:url("envelope1.png");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    border-radius:6px;
-    padding: 0;
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.25),
-    inset 0 0 10px rgba(255,255,255,.3);
+width:100%;
+height:100%;
+background:url("envelope1.png") center/cover no-repeat;
+border-radius:12px;
 }
-
-/* Top Flap */
-
-.envelope-top{
-    position:absolute;
-    top:0;
-    left:0;
-
-    width:10%;
-    height:320px;
-    padding: 0;
-
-    background:linear-gradient(
-    135deg,
-    #c4ceb7,
-    #aeb89f
-    );
-
-    clip-path:polygon(
-    0 0,
-    100% 0,
-    50% 100%
-    );
-
-    transform-origin:top;
-    transition:1s;
-    z-index:5;
-}
-
-/* Gold Seal */
 
 .seal{
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-    circle at top,
-    #ffd65e,
-    #d4a017
-    );
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-    font-size:34px;
-    font-family:'Cinzel',serif;
-    font-weight:600;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.3),
-    inset 0 4px 8px rgba(255,255,255,.5);
-
-    z-index:10;
-}
-
-/* Hover */
-
-.envelope:hover{
-    transform:translateY(-10px);
+position:absolute;
+width:100px;
+height:100px;
+border-radius:50%;
+background:#d4af37;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
 }
 
 .tap-text{
-    margin-top:60px;
-
-    color:#ffffff;
-
-    font-size:28px;
-
-    letter-spacing:2px;
-
-    font-family:'montserrat',serif;
+margin-top:30px;
+color:#fff;
+font-size:20px;
 }
 
-/* Floating Animation */
-
-@keyframes floatEnvelope{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-15px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
-/* =========================
-   MAIN CONTENT
-========================= */
+/* =====================================
+MAIN CONTENT
+===================================== */
 
 #main-content{
-    display:none;
-    background
-    
+display:none;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* =====================================
+HERO SECTION
+===================================== */
 
 .hero{
-    min-height:100vh;
-    padding:100px 20px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-
-    background:url("bg2.png");
-    background-size:cover;
-    background-position:top;
+min-height:100vh;
+background:url("bg2.png") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:120px 20px 60px;
+position:relative;
 }
 
 .top-layer{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-    height: 735px;
-    z-index:100;
-
-    pointer-events:none;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+max-width:100%;
+pointer-events:none;
 }
+
 .hero-content{
-
-    max-width:1200px;
-
-    padding:20px;
+max-width:900px;
+z-index:2;
 }
 
 .hero h4{
-
-    letter-spacing:3px;
-
-    color:#762edc;
-
-    margin: 300px 0 0 20px;
-
+color:#762edc;
+letter-spacing:3px;
+margin-top:140px;
+margin-bottom:20px;
 }
 
 .hero h1{
-
-    font-size:85PX;
-    color: #5e17eb;
-
-    font-family:'Cinzel',serif;
-
-    margin-bottom:20px;
+font-family:'Cinzel',serif;
+font-size:clamp(2.8rem,8vw,5rem);
+color:#5e17eb;
+margin-bottom:20px;
 }
 
 .hero span{
-    color:#ff0000;
+color:red;
 }
 
 .quote{
-
-    font-size:1.2rem;
-    color: #333;
-
-    line-height:1.8;
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
 .btn{
-
-    display:inline-block;
-
-    margin-top:30px;
-
-    background:#5e17eb;
-
-    color:rgb(255, 255, 255);
-
-    text-decoration:none;
-
-    padding:15px 35px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.3s;
+display:inline-block;
+margin-top:30px;
+padding:14px 34px;
+background:#5e17eb;
+color:#fff;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
 }
 
 .btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 10px 25px rgba(141, 55, 212, 0.4);
+opacity:.9;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* =====================================
+SAVE THE DATE
+===================================== */
 
-section{
-
-    padding:100px 20px;
-    background-color: #d7c7f9;
-
-    text-align:center;
+.save-date{
+width:100%;
+margin-top:60px;
+text-align:center;
 }
 
-.hero-image{ 
-    width:200%; 
-    max-width:500px; 
-    border-radius:20px; 
-     }
-
-h2{
-
-    font-size:2.5rem;
-
-    margin-bottom:40px;
-
-    font-family:'Cinzel',serif;
-
-    color:#5e17eb;
+.hero-image{
+width:100%;
+max-width:400px;
+display:block;
+margin:0 auto 30px;
 }
+
+.save-date h2{
+color:#5e17eb;
+margin-bottom:25px;
+}
+
 .date-card{
-
-    font-size:22px;
-
-    margin:15px 0 0 15px;
-
-    font-family:'Cinzel',serif;
-
-    color:#5e17eb;
-}
-p{
-
-    font-size:20px;
-
-    margin-bottom:10px 0 0 10px;
-
-    font-family:'Cinzel',serif;
-
-    color:#323232;
+background:#fff;
+max-width:500px;
+margin:auto;
+padding:30px;
+border-radius:20px;
+border:2px solid #762edc;
 }
 
-/* =========================
-   CARDS
-========================= */
-
-.date-card,
-.event-card,
-.venue-card{
-
-    max-width:500px;
-
-    margin:auto;
-
-    background:#ffffff;
-
-    border: solid 2px;
-    border-color: #762edc;
-
-    backdrop-filter:blur(20px);
-
-    border-radius:20px;
-
-    padding:10px;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.1);
+.date-card h3{
+color:#5e17eb;
+margin-top:15px;
 }
 
-.event-card{
+/* =====================================
+COUNTDOWN
+===================================== */
 
-    margin-bottom:30px;
-}
-
-/* =========================
-   COUPLE
-========================= */
-
-.couple-box{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:50px;
-
-    flex-wrap:wrap;
-}
-
-.person{
-
-    background:white;
-
-    padding:30px;
-
-    width:320px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-}
-
-.heart{
-
-    font-size:60px;
-
-    color:#d4af37;
-
-    align-self:center;
-}
-
-/* =========================
-   COUNTDOWN
-========================= */
 .countdown{
-    margin-top: 30px;
+margin-top:50px;
 }
+
 .timer{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
+display:flex;
+justify-content:start;
+flex-wrap:wrap;
+gap:15px;
 }
 
 .timer div{
-
-    width:120px;
-
-    background:white;
-
-    padding:25px;
-
-    border: solid 2px;
-    border-color: #762edc;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.1);
+background:#fff;
+width:110px;
+padding:20px;
+border-radius:18px;
+border:2px solid #762edc;
 }
 
 .timer span{
-
-    font-size:2rem;
-
-    font-weight:bold;
-
-    color:#83239e;
+font-size:2rem;
+color:#5e17eb;
+font-weight:bold;
 }
-.days{
-    font-size: 124px;
+.p{
+    font-size: 22px;
 }
 
+/* =====================================
+COMMON SECTION
+===================================== */
 
+section{
+padding:80px 20px;
+text-align:center;
+}
 
+section h2{
+font-family:'Cinzel',serif;
+color:#5e17eb;
+margin-bottom:40px;
+font-size:2.5rem;
+}
 
-/* =========================
-   EVENTS SECTION
-========================= */
+/* =====================================
+COUPLE SECTION
+===================================== */
+couple section{
+    flex-direction:down ;
+}
+.couple{
+background:#d7c7f9;
+}
+
+.couple-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.person{
+background:#fff;
+padding:30px;
+width:420px;
+border-radius:20px;
+}
+
+.heart{
+font-size:80px;
+color:red;
+}
+
+/* =====================================
+EVENTS SECTION
+===================================== */
 
 .events{
-    padding:120px 20px;
-    background:#eae1ff;
-    text-align:center;
+background:#eae1ff;
 }
-
-.events h2{
-    font-size:3rem;
-    color:#762edc;
-    font-family:'Cinzel', serif;
-    margin-bottom:60px;
-}
-
-/* =========================
-   EVENT CARD COMMON
-========================= */
 
 .event-card1,
 .event-card2{
-
-    max-width:800px;
-    height:400px;
-
-    margin:40px auto;
-
-    border-radius:25px;
-
-    overflow:hidden;
-
-    position:relative;
-
-    display:flex;
-    align-items:flex-end;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.25);
-
-    transition:.4s ease;
+max-width:800px;
+height:400px;
+margin:40px auto;
+border-radius:25px;
+overflow:hidden;
+display:flex;
+align-items:flex-end;
+background-size:cover;
+background-position:center;
 }
 
-/* Background Images */
-
 .event-card1{
-    background-image:url("reception1.jpg");
-    background-size:cover;
-    background-position:center;
+background-image:url("reception1.jpg");
 }
 
 .event-card2{
-    background-image:url("marriage1.jpg");
-    background-size:cover;
-    background-position:center;
+background-image:url("marriage1.jpg");
 }
 
-/* Hover */
-
-.event-card1:hover,
-.event-card2:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:
-    0 25px 60px rgba(118,46,220,.25);
+.event-card1 h3,
+.event-card2 h3,
+.event-card1 p,
+.event-card2 p{
+background:rgba(255,255,255,.95);
+width:100%;
+padding:20px;
 }
 
-/* =========================
-   WHITE BOTTOM BOX
-========================= */
-
-.event-info{
-
-    width:100%;
-
-    background:#ffffff;
-
-    padding:25px 35px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-/* Left Side */
-
-.event-left h3{
-
-    font-size:34px;
-
-    color:#762edc;
-
-    font-family:'Cinzel', serif;
-
-    margin:0;
-}
-
-/* Right Side */
-
-.event-right{
-
-    text-align:right;
-}
-
-.event-right p{
-
-    margin:5px 0;
-
-    font-size:18px;
-
-    color:#444;
-
-    font-weight:500;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    .events h2{
-        font-size:2rem;
-    }
-
-    .event-card1,
-    .event-card2{
-        height:320px;
-    }
-
-    .event-info{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:10px;
-    }
-
-    .event-right{
-        text-align:center;
-    }
-
-    .event-left h3{
-        font-size:26px;
-    }
-
-    .event-right p{
-        font-size:16px;
-    }
-
-}
-
-
-/* =========================
-   VENUE SECTION
-========================= */
+/* =====================================
+VENUE SECTION
+===================================== */
 
 .venue{
-
-    padding:90px 20px;
-
-    background:url("venue-bg.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    position:relative;
-}
-
-.venue::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:#f8f2ff;
-}
-
-.venue h2{
-
-    position:relative;
-    z-index:2;
-
-    text-align:center;
-
-    color:#762edc;
-
-    font-size:3rem;
-
-    margin-bottom:60px;
-
-    font-family:'Cinzel', serif;
+background:#f8f2ff;
 }
 
 .venue-container{
-
-    position:relative;
-    z-index:2;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    display:flex;
-
-    gap:30px;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
+max-width:1200px;
+max-height: 600px;
+margin:auto;
+display:flex;
+align-items: center;
+gap:30px;
+flex-wrap:wrap;
 }
-
-/* Venue Card */
 
 .venue-card{
-
-    flex:1;
-
-    min-width:320px;
-
-    padding:40px;
-
-    border-radius:25px;
-
-    background:rgba(255, 255, 255, 0.08);
-
-    backdrop-filter:blur(15px);
-
-    border:2px solid #762edc);
-
-    color:white;
+flex:1;
+min-width:300px;
+max-height: 500px;
+background:#fff;
+padding:30px;
+border-radius:20px;
+border:2px solid #762edc;
 }
-
-.venue-card h3{
-
-    color:#762edc;
-
-    font-size:2rem;
-
-    margin-bottom:20px;
-}
-
-.venue-card p{
-
-    line-height:1.9;
-
-    margin-bottom:15px;
-}
-
-.landmark{
-
-    color:#762edc;
-
-    font-weight:600;
-}
-
-/* Map Card */
 
 .map-card{
-
-    flex:1;
-
-    min-width:350px;
-
-    height:490px;
-
-    overflow:hidden;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.4);
+flex:1;
+min-width:400px;
+height: 300px;
+max-height:850px;
+border-radius:20px;
+overflow:hidden;
 }
 
 .map-card iframe{
-
-    width:100%;
-    height:100%;
-    border:none;
+width:100%;
+height:200%;
+border:none;
 }
 
-/* Mobile */
+/* =====================================
+FRIENDS SECTION
+===================================== */
 
-@media(max-width:768px){
-
-    .venue h2{
-        font-size:2rem;
-    }
-
-    .map-card{
-        height:300px;
-    }
-
+.friends{
+background:#d7c7f9;
 }
 
+.friends p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
 
-
-
-/* =========================
-   FOOTER
-========================= */
+/* =====================================
+FOOTER
+===================================== */
 
 footer{
-
-    background:#5e17eb;
-
-    color:rgb(171, 171, 171);
-
-    text-align:center;
-
-    padding:80px 20px;
+background:#5e17eb;
+color:#fff;
+text-align:center;
+padding:60px 20px;
 }
 
 footer h2{
-
-    color:#ffffff;
+color:#fff;
+margin-bottom:15px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================
+MOBILE
+===================================== */
 
 @media(max-width:768px){
 
-.hero h1{
-    font-size:2.8rem;
-}
-
+```
 .envelope{
     width:280px;
-    height:350px;
+    height:190px;
 }
 
-.seal{
-    width:90px;
-    height:90px;
-    font-size:24px;
+.hero{
+    padding-top:80px;
 }
 
-.tap-text{
-    font-size:14px;
+.hero h4{
+    margin-top:80px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.quote{
+    font-size:15px;
+}
+
+.hero-image{
+    max-width:280px;
 }
 
 .timer div{
-    width:90px;
+    width:80px;
+    padding:15px;
+}
+
+.person{
+    width:100%;
+    max-width:320px;
+}
+
+.event-card1,
+.event-card2{
+    height:250px;
+}
+
+.venue-container{
+    flex-direction:column;
+}
+
+.map-card{
+    height:300px;
+}
+
+section h2{
+    font-size:2rem;
 }
 
 }
-```
