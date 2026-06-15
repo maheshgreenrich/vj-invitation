@@ -57,7 +57,7 @@ position:absolute;
 width:100px;
 height:100px;
 border-radius:50%;
-background:#d4af37;
+background: linear-gradient(135deg, #d4af37, #c2a33f, #d4af37, #e1c876);
 color:#fff;
 display:flex;
 justify-content:center;
@@ -109,6 +109,7 @@ pointer-events:none;
 .hero-content{
 max-width:900px;
 z-index:2;
+margin-top:80px;
 }
 
 .hero h4{
