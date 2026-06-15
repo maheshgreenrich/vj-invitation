@@ -216,7 +216,7 @@ color:#5e17eb;
 font-weight:bold;
 }
 .timer p{
-    font-size: 12px;
+    font-size: 2px;
 }
 
 /* =====================================
@@ -266,6 +266,14 @@ color:red;
 
 /* EVENT CARD */
 
+events{
+    background-color: #d7c7f9;
+}
+
+.events{
+    background-color: #d7c7f9;
+}
+
 .event-card{
     max-width:900px;
     height:450px;
@@ -308,7 +316,7 @@ color:red;
 /* LEFT SIDE */
 
 .event-details h3{
-    font-size:36px;
+    font-size:26px;
     color:#762edc;
     margin:0;
 }
@@ -406,7 +414,7 @@ color:red;
     max-width:550px;
 
     min-height:450px;
-    max-height: 400px;
+    max-height: 500px;
 
     border-radius:20px;
 
