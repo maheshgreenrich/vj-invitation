@@ -252,17 +252,70 @@ background:#d7c7f9;
     gap:20px;
 }
 
-.person{
+.erson{
 background:#fff;
 padding:30px;
 width:420px;
 border-radius:20px;
 }
 
-.heart{
+.eart{
 font-size:80px;
 color:red;
 }
+
+
+
+
+
+
+.person{
+    width:350px;
+    min-height:450px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* Dark overlay for text readability */
+.person::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+}
+
+.person h3,
+.person p{
+    position:relative;
+    z-index:2;
+    color:white;
+}
+
+/* Groom Background */
+.groom{
+    background:url("groom.jpeg") center/cover no-repeat;
+}
+
+/* Bride Background */
+.bride{
+    background:url("bride.jpeg") center/cover no-repeat;
+}
+
+
+
+
 
 /* EVENT CARD */
 
